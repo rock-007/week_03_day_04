@@ -13,7 +13,15 @@
     <ul>
         <li style="display: inline-block">{{each_event.name}}</li>
     </ul>
+    {% else %}
+    <ul>
+        <li style="display: inline-block">{{each_event.name}}</li>
+        <li style="display: inline-block">✅</li>
+    </ul>
     {% endif %}
+   
+    
+
     {% endfor %}
     <form action="/" method="post">
         <label for="name">

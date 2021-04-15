@@ -13,21 +13,15 @@ all_events =[event_01, event_02, event_03, event_04]
 
 
 def add_new_event(event):
-    if event.name in all_events:
-        all_events.append(event)
-        i=0
-        while i <len(all_events):
+    all_events.append(event)
+    i= 0
+    while i <len(all_events):
             # for each_event in all_events:
             # print(each_event)
             if all_events[i].name == event.name:
                 all_events[i].recurring = True
             i += 1
 
-                
-
-    else:
-        print( len (all_events))
-        all_events.append(event)
 
 
 
