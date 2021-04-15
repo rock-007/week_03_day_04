@@ -1,25 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+
     <h1>Hello</h1>
     {% for each_event in all_events  %}
     {% if each_event.recurring == False %}
-    <ul>
+    <form action="/updated" method="post">
+        <ul>
         <li style="display: inline-block">{{each_event.name}}</li>
+        <input type="hidden" id ="single_event_name" name="single_event_name" value="{{each_event.name}}">
+        <input type="hidden" id ="single_event_date" name="single_event_date" value="{{each_event.date}}">
+
+            <input type="submit" value="Delete">
+        </li>
     </ul>
+</form>
     {% else %}
+    <form action="/updated" method="post">
+
     <ul>
         <li style="display: inline-block">{{each_event.name}}</li>
         <li style="display: inline-block">✅</li>
+        <input type="hidden" id ="single_event_name" name="single_event_name" value="{{each_event.name}}">
+        <input type="hidden" id ="single_event_date" name="single_event_date" value="{{each_event.date}}">
+
+        <input type="submit" value="Delete">
+        </li>
     </ul>
+    </form>
     {% endif %}
-   
+
     
 
     {% endfor %}
@@ -41,6 +52,6 @@
         <input type="submit" value="Add Events">
     
     </form>
-</body>
-</html>
+
+    {% endblock %}
 

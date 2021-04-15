@@ -9,7 +9,6 @@ def index():
     return render_template("index.html",title="Events", all_events=all_events)
 
 @app.route('/', methods=["POST"])
-
 def add_event():
     print(request.form)
     new_name = request.form['name']
@@ -23,4 +22,15 @@ def add_event():
 
     return render_template('index.html', title="Events", all_events= all_events)
 
-    
+@app.route('/updated', methods=["POST"])
+def remove_event():
+    print("ffd")
+    arg_01= request.form['single_event_name']
+    arg_02 = request.form ['single_event_date']
+    print(arg_01)
+    print(arg_02)
+
+    remove_selected_event(arg_01, arg_02)
+
+    return render_template("index.html",title="Events", all_events=all_events)
+

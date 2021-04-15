@@ -34,4 +34,35 @@ def add_new_event(event):
 # def set_recurring(event):
 #     event.recurring = True
 
+def remove_selected_event(event_name, date):
+
+    i=0
+    while(i<len (all_events)):
+        print(all_events[i].name)
+        print(event_name)
+        
+        if all_events[i].name == event_name :
+            if  all_events[i].recurring == True and recurring_count(event_name)== 2 :
+                set_recurring_false(event_name)
+                all_events.remove( all_events[i])
+            
+            else:
+                all_events.remove( all_events[i])
+        i += 1
+
+
+def recurring_count(event_name):
+    count = 0
+    for each_event in all_events:
+        if each_event.name == event_name:
+            count += 1
+    return count
+
+def set_recurring_false(event_name):
+        i= 0
+        while i <len(all_events):
+
+            if all_events[i].name == event_name:
+                all_events[i].recurring = False
+            i += 1
 
