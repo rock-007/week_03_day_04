@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    {% for each_event in all_events  %}
+    {% if each_event.recurring == False %}
+    <ul>
+        <li style="display: inline-block">{{each_event.name}}</li>
+    </ul>
+    {% endif %}
+    {% endfor %}
+    <form action="/" method="post">
+        <label for="name">
+            <input type="text" placeholder="Event name here" name="name" id="name">
+        </label>
+        <label for="date">
+            <input type="date"  name="date" id="date">
+        </label>
+        <label for="guest">
+            <input type="text" placeholder="No. of guests" name="guest" id="guest">
+        </label>
+        <label for="room">
+            <input type="text" placeholder="No. of rooms" name="room" id="room">
+        </label> 
+        <textarea placeholder="Enter Description here" name="description" id="description" cols="100" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Add Events">
+    
+    </form>
+</body>
+</html>
+
