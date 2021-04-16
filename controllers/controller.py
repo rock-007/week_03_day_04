@@ -2,6 +2,8 @@ from flask import render_template, request
 from app import app
 from models.all_events import *
 from models.event import Event
+from datetime import datetime
+
 
 
 @app.route ('/')
@@ -27,8 +29,7 @@ def remove_event():
     print("ffd")
     arg_01= request.form['single_event_name']
     arg_02 = request.form ['single_event_date']
-    print(arg_01)
-    print(arg_02)
+ 
 
     remove_selected_event(arg_01, arg_02)
 
