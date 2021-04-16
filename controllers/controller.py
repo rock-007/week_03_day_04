@@ -29,7 +29,9 @@ def remove_event():
     print("ffd")
     arg_01= request.form['single_event_name']
     arg_02 = request.form ['single_event_date']
- 
+    print(arg_02)
+
+
 
     remove_selected_event(arg_01, arg_02)
 

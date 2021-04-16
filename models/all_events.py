@@ -1,11 +1,11 @@
 from models.event import *
 from datetime import datetime
 
-
-event_01 = Event(datetime.strptime("apr-02-2021","%m/%d/%y"), "salsa_party", 50, "salsa_room", "Introductory Class followed by social dancing-salsa_party")
-event_02 = Event(datetime.strptime("apr-02-2021","%m/%d/%y"), "bachata_party", 52, "bachata_room", "Introductory Class followed by social dancing-bachata_party")
-event_03 = Event(datetime.strptime("apr-02-2021","%m/%d/%y"), "kizomba_party", 53, "kizomba_room", "Introductory Class followed by social dancing-kizomba_party")
-event_04 = Event(datetime.strptime("apr-02-2021","%m/%d/%y"), "forro_party", 51, "forro_room", "Introductory Class followed by social dancing-forro_party")
+#datetime.strptime("14 Apr 21", "%d %b %y")
+event_01 = Event("2021-04-12 00:00:00", "salsa_party", 50, "salsa_room", "Introductory Class followed by social dancing-salsa_party")
+event_02 = Event("2021-04-13 00:00:00", "bachata_party", 52, "bachata_room", "Introductory Class followed by social dancing-bachata_party")
+event_03 = Event("2021-04-14 00:00:00", "kizomba_party", 53, "kizomba_room", "Introductory Class followed by social dancing-kizomba_party")
+event_04 = Event("2021-04-15 00:00:00", "forro_party", 51, "forro_room", "Introductory Class followed by social dancing-forro_party")
 
 all_events =[event_01, event_02, event_03, event_04]
 
@@ -38,11 +38,7 @@ def set_recurring_true(event_name, occurrance):
 
 
 def remove_selected_event(event_name, date):
-    print("xxxwe")
-    print(date)
-    print(all_events[0].date)
 
-    print(all_events[0].date)
 
 
     
@@ -53,8 +49,8 @@ def remove_selected_event(event_name, date):
 
 
         
-        if all_events[i].name == event_name :
-            if  all_events[i].recurring == True and recurring_count(event_name)== 2 :
+        if all_events[i].name == event_name and all_events[i].date == date :
+            if  all_events[i].recurring == True and recurring_count(event_name)== 2  :
                 set_recurring_false(event_name)
                 all_events.remove( all_events[i])
             

@@ -8,11 +8,12 @@
     {% if each_event.recurring == False %}
     <form action="/updated" method="post">
         <ul>
-        <li style="display: inline-block">{{each_event.name}}</li>
-        <input type="hidden" id ="single_event_name" name="single_event_name" value="{{each_event.name}}">
-        <input type="hidden" id ="single_event_date" name="single_event_date" value="{{each_event.date}}">
-
+            <input type="hidden" id ="single_event_name" name="single_event_name" value="{{each_event.name}}">
+            <input type="hidden" id ="single_event_date" name="single_event_date" value="{{each_event.date}}">
+    
             <input type="submit" value="Delete">
+        <li style="display: inline-block">{{each_event.name}}</li>
+
         </li>
     </ul>
 </form>
@@ -20,12 +21,13 @@
     <form action="/updated" method="post">
 
     <ul>
-        <li style="display: inline-block">{{each_event.name}}</li>
-        <li style="display: inline-block">✅</li>
         <input type="hidden" id ="single_event_name" name="single_event_name" value="{{each_event.name}}">
         <input type="hidden" id ="single_event_date" name="single_event_date" value="{{each_event.date}}">
 
         <input type="submit" value="Delete">
+        <li style="display: inline-block">{{each_event.name}}</li>
+        <li style="display: inline-block">✅</li>
+
         </li>
     </ul>
     </form>
